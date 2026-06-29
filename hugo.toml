@@ -1,0 +1,31 @@
+baseURL = "https://go-ruby-csv.github.io/"
+title = "go-ruby-csv"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[params.phases]]
+  name = "Parse & generate"
+  status = "ready"
+  blurb = "`CSV.parse` and `CSV.generate` over the full dialect surface: column/row separators, quote character, and the quoting rules Ruby's CSV uses."
+[[params.phases]]
+  name = "Dialects & quoting"
+  status = "ready"
+  blurb = "Configurable `col_sep` / `row_sep` / `quote_char`, with minimal vs. forced quoting and embedded-newline handling matching MRI byte-for-byte."
+[[params.phases]]
+  name = "Headers"
+  status = "ready"
+  blurb = "`Row` and `Table` with header access, duplicate-header handling, and header/field converters, the way reference Ruby's `CSV::Row` / `CSV::Table` work."
+[[params.phases]]
+  name = "Converters"
+  status = "ready"
+  blurb = "The built-in `:integer` / `:float` / `:date` field converters and header converters, applied with Ruby's ordering and fall-through semantics."
+[[params.phases]]
+  name = "MalformedCSVError"
+  status = "ready"
+  blurb = "Raised on unclosed quotes and stray quote characters at the same positions, with the same line/column information as reference Ruby."
+[[params.phases]]
+  name = "Differential oracle & coverage"
+  status = "ready"
+  blurb = "A wide corpus parsed and generated both here and by the system `ruby`/`csv`, compared byte-for-byte; 100% coverage, gofmt + go vet clean, green across all six 64-bit Go arches and three OSes."
